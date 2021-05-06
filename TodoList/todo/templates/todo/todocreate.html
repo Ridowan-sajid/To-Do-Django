@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<nav class="container py-3 my-3 bg-secondary">
+    <h1>Hello Everybody</h1>
+</nav>
+<form class="text-primary font-weight-bold bg-light container" method="POST">
+    {% csrf_token %}
+    <fieldset >
+         {{ form.as_p }}
+    </fieldset>
+
+    <button class="btn btn-outline-success">Submit</button>
+</form>
+{% endblock content %}

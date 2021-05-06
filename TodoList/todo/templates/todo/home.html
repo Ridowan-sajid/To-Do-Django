@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<nav class="container py-3 my-3 bg-secondary">
+    <h1 class="text-dark text-center"  >ALL TODO</h1>
+        <h2 class="text-center"><a  class="text-decoration-none text-white" href="{% url 'todo-form' %}">Create a Todo</a></h2>
+</nav>
+<div class="container">
+<div class="row">
+    {% for object in objects %}
+    <div class="mx-3 border border-primary my-3 col-5 " style="height:20vh width:20vw">
+        <h2 class="pl-1" ><a href="{% url 'det_form' object.pk %}" >{{ object.title }}</a> </h2>
+    <p>{{ object.date }}</p>
+<!--    <p class="p-2">{{ object.description }}</p>-->
+    </div>
+    {% endfor %}
+</div>
+    </div>
+{% endblock content %}

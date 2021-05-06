@@ -1,0 +1,9 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+    <form class="container bg-light my-5" method="POST">
+        {% csrf_token %}
+        <h1>You really want to delete this todo {{ dele_todo.title }}</h1>
+        <button class="btn btn-outline-danger mx-4" style="width:4rem;">Yes</button>
+        <a class="btn btn-outline-primary" style="width:4rem;" href="/">No</a>
+    </form>
+{% endblock content %}

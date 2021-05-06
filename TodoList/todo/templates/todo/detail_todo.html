@@ -1,0 +1,19 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<nav class="container py-3 my-3 bg-secondary">
+    <h1>Hello Everybody</h1>
+</nav>
+<div class="container">
+<div class="row ">
+    <div class=" border border-primary my-3 " style="height:20vh width:20vw">
+    <h2 class="pl-1" > {{ de_form.title }}: </h2>
+    <p>{{ de_form.date }}</p>
+    <p class="p-2">{{ de_form.description }}</p>
+    <div class="container my-3">
+        <a class="btn btn-outline-danger mx-4" style="width:6rem;" href="{% url 'dele_form' de_form.pk %}">Delete</a>
+        <a class="btn btn-outline-success" style="width:6rem;" href="{% url 'up_form' de_form.pk %}">Update</a>
+    </div>
+    </div>
+</div>
+    </div>
+{% endblock content %}
